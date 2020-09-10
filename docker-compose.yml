@@ -1,0 +1,35 @@
+version: '3'
+services:
+  app:
+    build: .
+    volumes:
+      - ./:/go/src/app
+    ports:
+            - "1323:3000"
+    command: sh -c "cd client && yarn start"
+    depends_on:
+      - db
+    environment:
+      MYSQL_DB_HOST: db
+      MYSQL_DB: database
+      MYSQL_PORT: 3306
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password  
+    restart: always
+    tty: true
+  db:
+    image: mysql:5.7.17
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./sqls/init:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: p@ssw0rd
+      MYSQL_DATABASE: database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+
+volumes:
+  mysql_data:
