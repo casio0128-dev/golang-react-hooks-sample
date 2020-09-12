@@ -1,6 +1,6 @@
 # docker-composeの使い方
 - `docker-compose build`
-- `docker-compose run --rm app sh -c "npm install -g create-react-app && create-react-app client --typescript"`
+- `docker-compose run --rm app sh -c "nrm -rf node_modules && cd client && npm install -g && npm install -g create-react-app && create-react-app client --typescript"`
 - `docker-compose up`
   - `-d`を付与することで、バックグランド起動`
 # build
