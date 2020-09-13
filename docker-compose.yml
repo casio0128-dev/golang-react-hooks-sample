@@ -22,7 +22,7 @@ services:
       - ./:/go/src/app
     ports:
       - "3000:3000"
-    command: sh -c "cd client && yarn start && yarn start"
+    command: sh -c "cd client && yarn build && yarn start"
     restart: always
     tty: true
   db:
