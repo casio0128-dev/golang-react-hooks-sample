@@ -13,3 +13,4 @@
   - `docker-compose run --rm app sh -c "npm run-script build"`
 - golang
   - `go build main.go -o build/main`、`go build && mv main build/`のどちらかを実行
+    - `../client/build` の静的ファイルを配信することで、Reactのシングルページアプリケーションを配信できる
