@@ -3,21 +3,15 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
 	"log"
 	"os"
+
+	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
 )
 
 func main() {
-	port := flag.String("port", "3000", "this args is port number.")
-
-	if root, err := os.Getwd(); err == nil {
-		fmt.Println(root)
-	} else {
-		log.Fatal(err)
-		return
-	}
+	port := flag.String("port", "1323", "this args is port number.")
 
 	e := echo.New()
 
@@ -25,7 +19,17 @@ func main() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
-	e.Static("/", "client/build/")
+	root, err := os.Getwd()
+
+	if err == nil {
+		fmt.Println(root)
+	} else {
+		log.Fatal(err)
+		return
+	}
+
+	e.Static("/", "../client/build")
 
 	e.Logger.Fatal(e.Start(fmt.Sprintf(":%s", *port)))
+	fmt.Println(root)
 }
