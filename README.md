@@ -1,4 +1,4 @@
-# instalation
+# installation
 1. `git clone [repository]`
 2. `cd [repository name]`
 3. `docker-compose build`
