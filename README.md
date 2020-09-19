@@ -11,8 +11,8 @@
 - **※react用のディレクトリが存在しない場合**
   - `docker-compose run --rm app sh -c "npm install -g create-react-app && create-react-app client --typescript"`
 - **※react用のディレクトリが既に存在する場合**
-  - `docker-compose run --rm app sh -c "rm -rf node_modules && cd client && npm install -g && npm install -g create-react-app`
-- `docker-compose up"`
+  - `docker-compose run --rm app sh -c "rm -rf node_modules && cd client && npm install -g && npm install -g create-react-app"`
+- `docker-compose up`
   - `-d`を付与することで、バックグランド起動`
 # build
 - client
