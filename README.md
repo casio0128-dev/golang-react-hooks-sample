@@ -2,7 +2,7 @@
 1. `git clone [repository]`
 2. `cd [repository name]`
 3. `docker-compose build`
-4. `docker-compose run --rm app sh -c "rm -rf node_modules && cd client && npm install -g && npm install -g create-react-app`
+4. `docker-compose run --rm app sh -c "rm -rf node_modules && cd client && npm install -g && npm install -g create-react-app"`
 5. `docker-compose up`
 
 
