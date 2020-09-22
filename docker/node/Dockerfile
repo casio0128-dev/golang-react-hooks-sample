@@ -8,4 +8,4 @@ RUN apk update && \
 
 RUN npm init --yes
 RUN npm install -g yarn webpack webpack-cli
-RUN npm i -g create-react-app
+RUN npm install -g create-react-app
