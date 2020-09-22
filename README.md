@@ -9,9 +9,9 @@
 # docker-composeの使い方
 - `docker-compose build`
 - **※client/node_modulesが存在しない場合**
-  - `docker-compose run --rm app sh -c "create-react-app client --typescript"`
+  - `docker-compose run --rm app sh -c "npx create-react-app my-app --template typescript"`
 - **※client/node_modulesが既に存在する場合**
-  - `docker-compose run --rm app sh -c "rm -rf node_modules && cd client && npm install -g && create-react-app client --typescript"`
+  - `docker-compose run --rm app sh -c "rm -rf node_modules && cd client && npm install -g && npx create-react-app my-app --template typescript"`
 - `docker-compose up`
   - `-d`を付与することで、バックグランド起動`
 # build
